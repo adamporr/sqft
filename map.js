@@ -52,7 +52,7 @@ layerDef = {
 	'group': 'featureLayers',
 	'type': 'L.esri.featureLayer',
 	'title': 'Parcels (all)',
-	'url': 'http://maps.franklincountyauditor.com/fcaags/rest/services/Parcels/ParcelFeatures/MapServer/0',
+	'url': 'https://maps.franklincountyauditor.com/fcaags/rest/services/Parcels/ParcelFeatures/MapServer/0',
 	'style': {
             'color': 'blue',
             'weight': 2,
