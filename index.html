@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=utf-8 />
+    <title>Residential Floor Area Statistics Calculator</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+
+    <!-- Leaflet -->
+    <script src="./leaflet/leaflet.js"></script>
+    <link rel="stylesheet" href="./leaflet.css" />
+
+    <!-- Load Esri Leaflet from CDN -->
+    <script src="./esri-leaflet/esri-leaflet-debug.js"></script>
+
+    <script src="./datalib/datalib.min.js"></script>
+    
+    <!-- Turf (geoprocessing library) -->
+    <script src="./turf/turf.min.js"></script>
+
+    <script src="./leaflet-choropleth/choropleth.js"></script>
+    
+    <link rel="stylesheet" href="./geocoder/Control.Geocoder.css">
+    <script src="./geocoder/Control.Geocoder.js"></script>
+    
+    <script src="./utility.js"></script>
+    
+    <style>
+}
+      .glyphicon-move {
+            cursor: move;
+            cursor: -webkit-grabbing;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            width: 100%;
+            height: 400px;
+        }
+
+        #query {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 1000;
+            background: white;
+            padding: 1em;
+        }
+
+        #query select {
+            font-size: 16px;
+        }
+
+
+    .info h4 {
+	margin: 0 0 5px;
+	color: #777;
+    }
+
+
+.legend {
+color: #555;
+padding: 6px 8px;
+font: 12px Arial, Helvetica, sans-serif;
+font-weight: bold;
+background: white;
+background: rgba(255,255,255,1);
+box-shadow: 0 0 15px rgba(0,0,0,0.2);
+border-radius: 5px;
+}
+
+		.legend ul {
+			list-style-type: none;
+			padding: 0;
+			margin: 0;
+			clear: both;
+		}
+		.legend li {
+			display: inline-block;
+			width: 30px;
+			height: 22px;
+		}
+		.legend .min {
+			float: left;
+			padding-bottom: 5px;
+		}
+		.legend .max {
+			float: right;
+		}
+
+    .parcelInfo {
+	padding: 6px 8px;
+	font: 14px/16px Arial, Helvetica, sans-serif;
+	background: white;
+	background: rgba(255,255,255, 1);
+	box-shadow: 0 0 15px rgba(0,0,0,0.2);
+	border-radius: 5px;
+    }
+
+    </style>
+
+</head>
+
+  <body>
+    <div id="map"></div>
+    <div>
+      <h2>Residential Floor Area Statistics Calculator</h2>
+      <p>This tool computes summary statistics for the residential
+      floor area of parcels within a radius of a center
+      location. Coverage is limited to Franklin County, Ohio.  Enter
+      the radius below, then double-click on the map or enter an
+      address to define the center.  A blue circle indicating the area
+      of interest will appear on the map.  After a few moments, the
+      residential parcels will appear on the map and the statistics
+      will appear below.</p>
+      <p>Radius (miles): <input class="radius" id="radius"
+				type="text" width="20" value="0.5"></input></p>
+      <p>Credits: Tool created
+	  by <a href="http://www.porrfamily.org/adam/">Adam
+	  Porr</a>. Parcel data provided by
+	  the <a href="http://www.franklincountyauditor.com/">Franklin
+	  County Auditor</a></p>
+      <hr>	
+    </div>
+    <div id="output">
+    </div>
+
+  <script src="./dom.js"></script>
+  <script src="./map.js"></script>
+</body>
+
+</html>
